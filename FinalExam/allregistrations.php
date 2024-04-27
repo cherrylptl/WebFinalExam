@@ -3,7 +3,7 @@ session_start();
 include('includes/db_connection.php');
 
 // Redirect to login page if user is not logged in
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== "admin") {
     header('Location: login.php');
     exit();
 } else {
